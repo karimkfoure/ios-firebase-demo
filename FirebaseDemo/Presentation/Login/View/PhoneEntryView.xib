@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhoneEntryViewController" customModule="FirebaseDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicatorView" destination="Tpb-QT-hfm" id="Dmk-hC-4az"/>
+                <outlet property="phoneNumberTextField" destination="LPQ-cd-EB5" id="xea-KJ-DFS"/>
+                <outlet property="sendSMSCodeButton" destination="ggl-u3-e5g" id="p9s-7T-79P"/>
+                <outlet property="view" destination="Rbt-aV-gtI" id="ipl-I0-lbX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Rbt-aV-gtI">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="oPH-ef-ygD">
+                    <rect key="frame" x="32" y="400" width="350" height="96"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Introduce tu número de teléfono" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LPQ-cd-EB5">
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                            <connections>
+                                <action selector="editingChanged:" destination="-1" eventType="editingChanged" id="C8i-qJ-aZo"/>
+                                <outlet property="delegate" destination="-1" id="ryj-23-wGV"/>
+                            </connections>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggl-u3-e5g">
+                            <rect key="frame" x="0.0" y="66" width="350" height="30"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Enviar SMS"/>
+                            <connections>
+                                <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="cw7-tv-xNV"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Tpb-QT-hfm">
+                    <rect key="frame" x="197" y="438" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="gBC-ei-dX7"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="oPH-ef-ygD" firstAttribute="centerY" secondItem="Rbt-aV-gtI" secondAttribute="centerY" id="13K-d2-z6T"/>
+                <constraint firstItem="Tpb-QT-hfm" firstAttribute="centerY" secondItem="Rbt-aV-gtI" secondAttribute="centerY" id="30G-oC-0W5"/>
+                <constraint firstItem="Tpb-QT-hfm" firstAttribute="centerX" secondItem="Rbt-aV-gtI" secondAttribute="centerX" id="5bQ-fz-6gu"/>
+                <constraint firstItem="oPH-ef-ygD" firstAttribute="leading" secondItem="gBC-ei-dX7" secondAttribute="leading" constant="32" id="Xez-Lw-6zV"/>
+                <constraint firstItem="oPH-ef-ygD" firstAttribute="centerX" secondItem="Rbt-aV-gtI" secondAttribute="centerX" id="ZnI-bY-b9d"/>
+            </constraints>
+            <point key="canvasLocation" x="0.0" y="157"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
